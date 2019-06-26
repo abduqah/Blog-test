@@ -25,11 +25,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    c = CounterWorker.perform_async()
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        format.json { render :show, status: :created, location: @post, meta: { counter_on: c } }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }

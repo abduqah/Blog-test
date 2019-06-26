@@ -82,7 +82,7 @@ test:
 #
 production:
   <<: *default
-  database: blog_production
+  database: <%= ENV['PRO_DATABASE_NAME'] %>
   username: rails
   password: rails123
 
