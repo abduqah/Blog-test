@@ -17,8 +17,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: blogdb.cwav3b2diatp.us-east-2.rds.amazonaws.com
-  port: 5432
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -83,6 +81,8 @@ test:
 production:
   <<: *default
   database: <%= ENV['PRO_DATABASE_NAME'] %>
-  username: rails
-  password: rails123
+  host: <%= ENV['PRO_DB_HOST'] %>
+  username: <%= ENV['PRO_DB_USERNAME'] %>
+  password: <%= ENV['PRO_DB_PASSWORD'] %>
+  port: <%= ENV['PRO_DB_PORT'] %>
 
