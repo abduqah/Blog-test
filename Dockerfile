@@ -22,4 +22,4 @@ ENV PRO_DB_PASSWORD rails123
 
 EXPOSE 3000
 
-CMD [ "rails", "s" ]
+CMD [ "rails", "s", "-b", "0.0.0.0" ]
