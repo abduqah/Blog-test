@@ -19,7 +19,8 @@ ENV PRO_DB_HOST blogdb.cwav3b2diatp.us-east-2.rds.amazonaws.com
 ENV PRO_DB_PORT 5432
 ENV PRO_DB_USERNAME rails
 ENV PRO_DB_PASSWORD rails123
+ENV PORT 80
 
-EXPOSE 3000
+EXPOSE 80
 
-CMD [ "rails", "s", "-b", "0.0.0.0" ]
+CMD [ "rails", "s" ]
