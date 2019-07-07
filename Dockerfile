@@ -23,4 +23,6 @@ ENV PORT 80
 
 EXPOSE 80
 
+RUN rails assets:precompile
+
 CMD [ "rails", "s" ]
